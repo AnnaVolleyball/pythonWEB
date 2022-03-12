@@ -90,8 +90,9 @@ def add_card(user, message):
 
 def get_card(vk, user, message):
     result = db_sess.query(__all_models.Cards.id).filter(__all_models.Cards.user_id == user,
-                                                         __all_models.Cards.title == message).all()[-1]
+                                                         __all_models.Cards.title == message).all()
     if result:
+        result = result[-1]
         upload = vk_api.VkUpload(vk)
         photo = upload.photo_messages(f'photo/{result[0]}.jpg')
         owner_id = photo[0]['owner_id']
