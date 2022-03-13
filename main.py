@@ -225,6 +225,9 @@ def main():
                 send_message(vk, "Ваш баланс в $: {:.2f}".format(currency('USD', user_id)), user_id, kb)
             elif message == "Баланс в ₿":
                 send_message(vk, "Ваш баланс в ₿: {:.8f}".format(currency('BTC', user_id)), user_id, kb)
+            elif message == "Начать":
+                send_message(vk, f"""Приветствую! С чего начнем? 
+                                     Предалагаю внести первое изменение в вашем бюджете!""", user_id, kb)
             else:
                 att = get_card(vk, user_id, message)
                 if att:
