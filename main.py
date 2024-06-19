@@ -9,8 +9,8 @@ from datetime import date
 from data import db_session
 from data import __all_models
 
-TOKEN = "21b26f42eb3492f2d4306d8410e44ac2e54cd1f197e861cf44e2310f74289657e7a6aa381c3389c0a3862"
-id_group = 211162831
+TOKEN = "token"
+id_group = id
 db_session.global_init("db/bot_vk.db")
 db_sess = db_session.create_session()
 
